@@ -13,6 +13,10 @@ from rest_framework import status, permissions
 from rest_framework_simplejwt.tokens import RefreshToken
 from .serializers import RegisterSerializer
 
+from rest_framework import viewsets, permissions
+from .models import Task
+from .serializers import TaskSerializer
+
 # Create your views here.
 def home(request):
 
@@ -157,9 +161,6 @@ class LoginAPI(APIView):
 
 
 
-from rest_framework import viewsets, permissions
-from .models import Task
-from .serializers import TaskSerializer
 
 class TaskViewSet(viewsets.ModelViewSet):
     queryset = Task.objects.all()
