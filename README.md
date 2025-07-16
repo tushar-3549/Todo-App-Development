@@ -58,6 +58,8 @@ Develop a full-stack To-Do application with user authentication and CRUD operati
 <img width="1854" height="534" alt="image" src="https://github.com/user-attachments/assets/b116b903-1015-47e8-9948-cdc345f9dfa7" />
 <img width="1416" height="729" alt="image" src="https://github.com/user-attachments/assets/33ef102b-b76a-4d85-b8cd-7468194a30a5" />
 
+- *Screencast*
+https://drive.google.com/file/d/1r6DfyXTaIiFwY-1iNWRCH6uhlqt2_EYp/view?usp=drive_link
 
 3. **Deployment steps**
 
