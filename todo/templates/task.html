@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<div class="card">
+  <div class="card-header"><strong>
+      Individual Task- ID: {{ individual_task.id }} </strong>
+  </div>
+  <div class="card-body">
+
+
+
+<p class="card-text">
+<strong>Title: </strong>{{ individual_task.title }}</p>
+
+<p class="card-text">
+<strong>Description: </strong>{{ individual_task.description }}
+</p>
+
+<p class="card-text">
+<strong>Status: </strong>{{ individual_task.status }}</p>
+
+<p class="card-text">
+<strong>Due Date: </strong>{{ individual_task.due_date }}</p>
+    
+  </div>
+</div>
+
+<br/><br/>
+<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+
+<a href="{% url 'delete_task' individual_task.id %}" class="btn btn-danger">Delete</a>
+<a href="{% url 'edit_task' individual_task.id %}" class="btn btn-success">Edit</a>
+
+		
+
+{% endblock %}

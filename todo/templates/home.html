@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+{% if user.is_authenticated %}
+
+<h2>Tasks...</h2>
+
+<table class="table table-striped table-hover table-bordered table-sm">
+    <tbody>
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Status</th>
+                <th scope="col">Due Date</th>
+                <th scope="col">ID</th>
+            </tr>
+        </thead>
+        <tr>
+            {% for task in tasks %}
+            <tr>
+                <td>{{task.title}}</td> 
+                <td>{{task.description}}</td> 
+                <td>{{task.status}}</td>
+                <td>{{task.due_date}} </td>
+                <td> <a href="{% url 'task' task.id%}">{{task.id}}</a></td>
+            </tr>
+        
+            {% endfor %}
+
+        </tr>
+    </tbody>
+  </table>
+
+
+  <br> <br>
+
+  <a href="{% url 'add_task' %}" class="btn btn-primary">Add Task</a>
+
+
+
+{% else %}
+
+
+    <h1>Login</h1>
+    <br>
+    <form method="POST" action="{% url 'home' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <input type="text" class="form-control" name="username", placeholder="Username" required>
+            
+          </div><br/>
+          <div class="mb-3">
+            <input type="password" class="form-control" name="password", placeholder="Password" required>
+          </div>
+          <br/>
+          <button type="submit" class="btn btn-secondary">Login</button>
+    </form>
+
+    {% endif %}
+
+
+{% endblock  %}
+
+
